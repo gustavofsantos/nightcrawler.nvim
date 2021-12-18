@@ -1,35 +1,35 @@
 local colors = {
-  gray     = '#3C3C3C',
-  lightred = '#D16969',
-  blue     = '#569CD6',
-  pink     = '#C586C0',
-  black    = '#262626',
-  white    = '#D4D4D4',
-  green    = '#608B4E',
+  foreground = '#CED2D6',
+  background = '#0A0F22',
+  normal = '#ffa7c4',
+  visual = '#ecc48d',
+  insert = '#80CBC4',
+  replace = '#7986E7',
+  inactive = '#5F7E97'
 }
 
 return {
   normal = {
-    b = { fg = colors.green, bg = colors.black },
-    a = { fg = colors.black, bg = colors.green, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.normal, bg = colors.background },
+    a = { fg = colors.background, bg = colors.normal, gui = 'bold' },
+    c = { fg = colors.foreground, bg = colors.background },
   },
   visual = {
-    b = { fg = colors.pink, bg = colors.black },
-    a = { fg = colors.black, bg = colors.pink, gui = 'bold' },
+    b = { fg = colors.visual, bg = colors.background },
+    a = { fg = colors.background, bg = colors.visual, gui = 'bold' },
   },
   inactive = {
-    b = { fg = colors.black, bg = colors.blue },
-    a = { fg = colors.white, bg = colors.gray, gui = 'bold' },
+    b = { fg = colors.background, bg = colors.inactive },
+    a = { fg = colors.inactive, bg = colors.background, gui = 'bold' },
   },
   replace = {
-    b = { fg = colors.lightred, bg = colors.black },
-    a = { fg = colors.black, bg = colors.lightred, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.replace, bg = colors.background },
+    a = { fg = colors.background, bg = colors.replace, gui = 'bold' },
+    c = { fg = colors.foreground, bg = colors.background },
   },
   insert = {
-    b = { fg = colors.blue, bg = colors.black },
-    a = { fg = colors.black, bg = colors.blue, gui = 'bold' },
-    c = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.insert, bg = colors.background },
+    a = { fg = colors.background, bg = colors.insert, gui = 'bold' },
+    c = { fg = colors.foreground, bg = colors.background },
   },
 }
