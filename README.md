@@ -19,4 +19,8 @@ colorscheme nightcrawler
 
 ## Screenshots
 
-![](./nightcrawler.png)
+![](./screenshots/nightcrawler.png)
+![](./screenshots/nightcrawler-insert.png)
+![](./screenshots/nightcrawler-visual.png)
+![](./screenshots/nightcrawler-term.png)
+![](./screenshots/nightcrawler-split.png)
