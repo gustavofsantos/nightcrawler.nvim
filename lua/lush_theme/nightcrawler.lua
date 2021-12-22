@@ -132,7 +132,7 @@ local theme = lush(function()
     Visual       { bg = selection }, -- Visual mode selection
     -- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = bool }, -- warning messages
-    Whitespace   { fg = symbol }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace   { fg = comment }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu     { fg = keyword }, -- current match in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
@@ -260,7 +260,7 @@ local theme = lush(function()
     TSPunctDelimiter     { fg = symbol };    -- For delimiters ie: `.`
     TSPunctBracket       { fg = symbol };    -- For brackets and parens.
     TSPunctSpecial       { fg = symbol };    -- For special punctutation that does not fall in the catagories before.
-    -- TSRepeat             { };    -- For keywords related to loops.
+    TSRepeat             { fg = keyword, gui = "italic"};    -- For keywords related to loops.
     TSString             { fg = string };    -- For strings.
     TSStringRegex        { fg = regex };    -- For regexes.
     TSStringEscape       { fg = keyword };    -- For escape characters within a string.
@@ -272,8 +272,8 @@ local theme = lush(function()
     TSInclude            { fg = symbol };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 
     TSTag                { fg = keyword };    -- Tags like html tag names.
-    TSTagDelimiter       { fg = bool };    -- Tag delimiter like `<` `>` `/`
-    -- TSText               { };    -- For strings considered text in a markup language.
+    TSTagDelimiter       { fg = symbol };    -- Tag delimiter like `<` `>` `/`
+    TSText               { fg = fg };    -- For strings considered text in a markup language.
     -- TSEmphasis           { };    -- For text to be represented with emphasis.
     -- TSUnderline          { };    -- For text to be represented with an underline.
     -- TSStrike             { };    -- For strikethrough text.
