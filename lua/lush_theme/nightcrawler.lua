@@ -45,20 +45,20 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local bg = "#0e1828"
-local bg_darker = "#0A0F22"
-local selection = "#1E2641"
-local fg = "#CED2D6"
-local fg_unfocus = "#868d91"
-local func = "#8eace3"
-local keyword = "#ffa7c4"
-local string = "#ecc48d"
-local symbol = "#5F7E97"
-local comment = "#576378"
-local bool = "#F87086"
-local regex = "#7986E7"
-local green = "#80CBC4"
-local popup_bg = "#161D37"
+local bg = hsl("#0e1828")
+local bg_darker = hsl("#0A0F22")
+local selection = hsl("#1E2641")
+local fg = hsl("#CED2D6")
+local fg_unfocus = hsl "#868d91"
+local func = hsl "#8eace3"
+local keyword = hsl "#ffa7c4"
+local string = hsl "#ecc48d"
+local symbol = hsl "#576378" -- #5F7E97
+local comment = hsl "#576378"
+local bool = hsl "#F87086"
+local regex = hsl "#7986E7"
+local green = hsl "#80CBC4"
+local popup_bg = hsl "#161D37"
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -90,7 +90,7 @@ local theme = lush(function()
     DiffChange   { fg = bg, bg = string }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { fg = bg, bg = bool }, -- diff mode: Deleted line |diff.txt|
     DiffText     { fg = bg, bg = string }, -- diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer  { fg = comment, bg = bg_darker }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+    EndOfBuffer  { fg = comment, bg = bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor   { fg = bg, bg = string }, -- cursor in a focused terminal
     TermCursorNC { fg = fg_unfocus }, -- cursor in an unfocused terminal
     ErrorMsg     { }, -- error messages on the command line
@@ -151,7 +151,7 @@ local theme = lush(function()
     Identifier     { fg = fg }, -- (preferred) any variable name
     Function       { fg = func }, -- function name (also: methods for classes)
 
-    Statement      { fg = keyword }, -- (preferred) any statement
+    Statement      { fg = keyword, gui = "italic" }, -- (preferred) any statement
     -- Conditional    { }, --  if, then, else, endif, switch, etc.
     -- Repeat         { }, --   for, do, while, etc.
     -- Label          { }, --    case, default, etc.

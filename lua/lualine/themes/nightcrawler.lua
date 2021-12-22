@@ -1,7 +1,7 @@
 local colors = {
   foreground = '#CED2D6',
   background = '#0A0F22',
-  normal = '#ffa7c4',
+  normal = '#606984',
   visual = '#ecc48d',
   insert = '#80CBC4',
   replace = '#7986E7',
@@ -10,8 +10,8 @@ local colors = {
 
 return {
   normal = {
-    b = { fg = colors.normal, bg = colors.background },
-    a = { fg = colors.background, bg = colors.normal, gui = 'bold' },
+    b = { fg = colors.foreground, bg = colors.background },
+    a = { fg = colors.foreground, bg = colors.normal, gui = 'bold' },
     c = { fg = colors.foreground, bg = colors.background },
   },
   visual = {
